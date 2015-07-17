@@ -1,6 +1,7 @@
-zanthus-parser.iml
+*.iml
 /target
 .idea
 .classpath
 .project
 .settings/
+.DS_Store

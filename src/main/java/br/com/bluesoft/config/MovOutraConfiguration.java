@@ -15,7 +15,7 @@ public class MovOutraConfiguration implements ParseFileConfiguration {
 
     static{
         mappedClasses.put("01", ResumoCupomFiscal.class);//thiago
-        mappedClasses.put("02", MovimentacaoFinalizadora.class);//william
+//        mappedClasses.put("02", MovimentacaoFinalizadora.class);//william
         mappedClasses.put("03", RegistroItemVendido.class);//eric
         mappedClasses.put("95", NfcSat.class);//william
     }

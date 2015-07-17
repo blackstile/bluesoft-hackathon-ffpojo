@@ -8,11 +8,11 @@ import java.math.BigDecimal;
 public class BigDecimalDecorator implements FieldDecorator<BigDecimal> {
 
 
-    private static final java.math.BigDecimal CEM = BigDecimal.TEN.multiply(BigDecimal.TEN);
+    private final BigDecimal CEM = BigDecimal.TEN.multiply(BigDecimal.TEN);
 
     public String toString(BigDecimal bigDecimal) throws FieldDecoratorException {
         if (bigDecimal == null){return null;}
-        return bigDecimal.multiply(CEM).toString();
+        return bigDecimal.multiply(CEM).setScale(0).toString().replace(".", "");
     }
 
     public BigDecimal fromString(String s) throws FieldDecoratorException {

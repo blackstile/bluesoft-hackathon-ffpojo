@@ -1,9 +1,9 @@
 package br.com.bluesoft.util;
 
 import br.com.bluesoft.config.ParseFileConfiguration;
+
 import com.github.ffpojo.FFPojoHelper;
 import com.github.ffpojo.exception.FFPojoException;
-import jdk.nashorn.internal.ir.ReturnNode;
 
 public class FFPojoParserConfiguration {
 

@@ -23,7 +23,7 @@ public class FFPojoParserConfiguration {
         }
     }
 
-    public static <T> String toText(Class<T> clazz, T entity){
+    public static <T> String toText(T entity){
         try {
             return FFPojoHelper.getInstance().parseToText(entity);
         } catch (FFPojoException e) {

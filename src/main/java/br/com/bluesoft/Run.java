@@ -1,15 +1,12 @@
 package br.com.bluesoft;
 
-import br.com.bluesoft.beans.NfcSat;
-import br.com.bluesoft.config.MovOutraConfiguration;
+import java.io.IOException;
+
+import br.com.bluesoft.beans.RegistroItemVendido;
 import br.com.bluesoft.util.FFPojoParserConfiguration;
+
 import com.github.ffpojo.exception.FFPojoException;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.text.SimpleDateFormat;
 
 public class Run {
 
@@ -27,6 +24,4 @@ public class Run {
         }
         textFileReader.close();
     }
-
-
 }

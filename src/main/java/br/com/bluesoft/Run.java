@@ -7,6 +7,7 @@ import br.com.bluesoft.util.FFPojoParserConfiguration;
 
 import com.github.ffpojo.exception.FFPojoException;
 
+
 public class Run {
 
     public static void main(String[] args) throws IOException, FFPojoException {
@@ -15,5 +16,6 @@ public class Run {
            System.out.println(registroItemVendido);
            System.out.println(FFPojoParserConfiguration.toText(RegistroItemVendido.class, registroItemVendido));
            System.out.println(line);
+
     }
 }

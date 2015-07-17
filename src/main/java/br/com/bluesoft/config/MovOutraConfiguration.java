@@ -14,10 +14,10 @@ public class MovOutraConfiguration implements ParseFileConfiguration {
     final static Map<String, Class<?>> mappedClasses =  new HashMap<String, Class<?>>();
 
     static{
-        mappedClasses.put("01", ResumoCupomFiscal.class);
-        mappedClasses.put("02", MovimentacaoFinalizadora.class);
-        mappedClasses.put("03", RegistroItemVendido.class);
-        mappedClasses.put("95", NfcSat.class);
+        mappedClasses.put("01", ResumoCupomFiscal.class);//thiago
+        mappedClasses.put("02", MovimentacaoFinalizadora.class);//william
+        mappedClasses.put("03", RegistroItemVendido.class);//eric
+        mappedClasses.put("95", NfcSat.class);//william
     }
 
     public Class<?> getClassMapped(int idLinePosition, int lengthLinePosition, String line){

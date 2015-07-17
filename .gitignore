@@ -1,3 +1,6 @@
 zanthus-parser.iml
 /target
 .idea
+.classpath
+.project
+.settings/

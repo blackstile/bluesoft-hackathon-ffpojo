@@ -1,23 +1,19 @@
 package br.com.bluesoft;
 
-import br.com.bluesoft.config.MovOutraConfiguration;
-import br.com.bluesoft.util.FFPojoParserConfiguration;
-import com.github.ffpojo.FFPojoHelper;
-import com.github.ffpojo.exception.FFPojoException;
+import java.io.IOException;
 
-import java.io.*;
+import br.com.bluesoft.beans.RegistroItemVendido;
+import br.com.bluesoft.util.FFPojoParserConfiguration;
+
+import com.github.ffpojo.exception.FFPojoException;
 
 public class Run {
 
     public static void main(String[] args) throws IOException, FFPojoException {
-        BufferedReader textFileReader = new BufferedReader(new InputStreamReader(new FileInputStream("movoutra.txt")));
-        String line;
-        while ( (line = textFileReader.readLine()) != null) {
-           Object myObject = FFPojoParserConfiguration.toEntity(new MovOutraConfiguration().getClassMapped(0,2,line), line);
-            System.out.println(myObject);
-        }
-        textFileReader.close();
+        String line = "031210000020121000002111015061500000789607982851403004000000000000000000000000010000000000000990000000000000000000000000000172700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000121";
+           RegistroItemVendido registroItemVendido = FFPojoParserConfiguration.toEntity(RegistroItemVendido.class, line);
+           System.out.println(registroItemVendido);
+           System.out.println(FFPojoParserConfiguration.toText(RegistroItemVendido.class, registroItemVendido));
+           System.out.println(line);
     }
-
-
 }

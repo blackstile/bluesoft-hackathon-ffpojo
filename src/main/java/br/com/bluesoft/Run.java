@@ -20,16 +20,18 @@ public class Run {
     	
         BufferedReader textFileReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         String line =  null;
+        long init  =  System.currentTimeMillis();
         while ( (line = textFileReader.readLine()) != null) {
             Class<?> clazz =  new MovOutraConfiguration().getClassMapped(0,2,line);
             if (clazz==null) continue;
             Object o  = FFPojoParserConfiguration.toEntity(clazz, line);
             System.out.println(o);
-            System.out.println(line);
-            System.out.println(FFPojoParserConfiguration.toText(o));
-            System.out.println();
+//            System.out.println(line);
+//            System.out.println(FFPojoParserConfiguration.toText(o));
+//            System.out.println();
 
         }
         textFileReader.close();
+        System.out.println(System.currentTimeMillis() - init );
     }
 }

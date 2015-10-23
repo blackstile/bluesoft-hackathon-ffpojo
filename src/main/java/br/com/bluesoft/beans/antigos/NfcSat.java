@@ -1,4 +1,4 @@
-package br.com.bluesoft.beans;
+package br.com.bluesoft.beans.antigos;
 
 
 import br.com.bluesoft.decorator.BigDecimalDecorator;
@@ -9,8 +9,6 @@ import com.github.ffpojo.metadata.positional.PaddingAlign;
 import com.github.ffpojo.metadata.positional.annotation.PositionalField;
 import com.github.ffpojo.metadata.positional.annotation.PositionalRecord;
 import com.github.ffpojo.metadata.positional.annotation.PositionalRecordLineIdentifier;
-import com.github.ffpojo.metadata.positional.annotation.extra.DatePositionalFiled;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -96,7 +94,7 @@ public class NfcSat {
     }
 
 //    6	Data do movimento (DDMMAA)	26	6
-    @DatePositionalFiled(dateFormat = "DDMMYY", initialPosition = 26, finalPosition = 31)
+    @PositionalField(initialPosition = 26, finalPosition = 31, decorator = DateDecorator.class, paddingAlign = PaddingAlign.LEFT, paddingCharacter = '0')
     public Date getDataMovimento() {
         return dataMovimento;
     }
@@ -108,7 +106,7 @@ public class NfcSat {
     }
 
     //9	Horário da venda (HHMM)	41	4
-    @DatePositionalFiled(dateFormat = "HHMM",  initialPosition = 41, finalPosition = 44)
+    @PositionalField(initialPosition = 41, finalPosition = 44, decorator = TimeDecorator.class, paddingAlign = PaddingAlign.LEFT, paddingCharacter = '0')
     public Date getHorarioVenda() {
         return horarioVenda;
     }
@@ -291,29 +289,6 @@ public class NfcSat {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .append("codigoTipoRegistro", codigoTipoRegistro)
-                .append("indentificacaoDoRegistro", indentificacaoDoRegistro)
-                .append("numeroEquipamento", numeroEquipamento)
-                .append("numeroSequencialOperacao", numeroSequencialOperacao)
-                .append("numeroFuncao", numeroFuncao)
-                .append("dataMovimento", dataMovimento)
-                .append("codigoDoOperador", codigoDoOperador)
-                .append("horarioVenda", horarioVenda)
-                .append("cpfCnpjCliente", cpfCnpjCliente)
-                .append("valorLiquido", valorLiquido)
-                .append("valorDesconto", valorDesconto)
-                .append("valorIcms", valorIcms)
-                .append("valorAcrescimo", valorAcrescimo)
-                .append("valorPis", valorPis)
-                .append("valorCofins", valorCofins)
-                .append("modeloDocumento", modeloDocumento)
-                .append("tipoEmissao", tipoEmissao)
-                .append("tipoAmbiente", tipoAmbiente)
-                .append("serieNFCe", serieNFCe)
-                .append("chaveNFCeSat", chaveNFCeSat)
-                .append("numeroDocumentoNFCeSat", numeroDocumentoNFCeSat)
-                .append("numeroSerieEquipamentoSat", numeroSerieEquipamentoSat)
-                .toString();
+        return this.getClass().getSimpleName();
     }
 }

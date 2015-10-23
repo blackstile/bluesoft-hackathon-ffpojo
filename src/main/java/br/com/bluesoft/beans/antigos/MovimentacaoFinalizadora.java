@@ -1,9 +1,8 @@
-package br.com.bluesoft.beans;
+package br.com.bluesoft.beans.antigos;
 
 import com.github.ffpojo.metadata.positional.annotation.PositionalField;
 import com.github.ffpojo.metadata.positional.annotation.PositionalRecord;
 import com.github.ffpojo.metadata.positional.annotation.PositionalRecordLineIdentifier;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 @PositionalRecord(lineIdentifiers = {
 		@PositionalRecordLineIdentifier(textIdentifier = "02")

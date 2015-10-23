@@ -1,4 +1,4 @@
-package br.com.bluesoft.beans;
+package br.com.bluesoft.beans.antigos;
 
 
 import br.com.bluesoft.decorator.DateDecorator;

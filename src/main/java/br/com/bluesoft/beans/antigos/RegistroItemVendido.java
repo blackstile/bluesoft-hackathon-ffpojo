@@ -1,14 +1,10 @@
-package br.com.bluesoft.beans;
+package br.com.bluesoft.beans.antigos;
 
 import com.github.ffpojo.metadata.positional.annotation.PositionalField;
 import com.github.ffpojo.metadata.positional.annotation.PositionalRecord;
 import com.github.ffpojo.metadata.positional.annotation.PositionalRecordLineIdentifier;
 
-@PositionalRecord(lineIdentifiers =
-{
-	@PositionalRecordLineIdentifier(startPosition = 0, textIdentifier = "03"),
-	@PositionalRecordLineIdentifier(startPosition = 29, textIdentifier = "150000078")
-})
+@PositionalRecord
 public class RegistroItemVendido {
 	
 	private String tipoDeRegistro;

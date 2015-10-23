@@ -15,19 +15,11 @@ public class FFPojoParserConfiguration {
         return (T) toEntity(clazz, text);
     }
     public static <T> T toEntity(Class<T> clazz, String text){
+        return FFPojoHelper.getInstance().createFromText(clazz, text);
 
-        try {
-            return FFPojoHelper.getInstance().createFromText(clazz, text);
-        } catch (FFPojoException e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
     }
 
     public static <T> String toText(T entity){
-        try {
-            return FFPojoHelper.getInstance().parseToText(entity);
-        } catch (FFPojoException e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
+        return FFPojoHelper.getInstance().parseToText(entity);
     }
 }
